@@ -1,7 +1,7 @@
-var http = require('http');
+evar http = require('http');
 var fs = require('fs');
 var index = fs.readFileSync( 'index1.html');
-var index2 = fs.readFileSync( 'https://phet-dev.colorado.edu/html/jg-tests/quadrilateral/quad-calibration/quadrilateral_en_phet.html');
+var index2 = fs.readFileSync( 'quadrilateral_en_adapted-from-phet.html');
 
 var SerialPort = require('serialport');
 const parsers = SerialPort.parsers;
