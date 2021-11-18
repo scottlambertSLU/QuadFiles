@@ -1,4 +1,4 @@
-evar http = require('http');
+var http = require('http');
 var fs = require('fs');
 var index = fs.readFileSync( 'index1.html');
 var index2 = fs.readFileSync( 'quadrilateral_en_adapted-from-phet.html');
@@ -10,7 +10,7 @@ const parser = new parsers.Readline({
   delimiter: '\r\n'
 });
 
-var port = new SerialPort('//dev/cu.usbmodem11201',{ 
+var port = new SerialPort('/dev/cu.usbmodem11201',{ 
   baudRate: 9600,
   dataBits: 8,
   parity: 'none',
@@ -46,17 +46,10 @@ const io = require('socket.io')(app, {
     allowEIO3: true
 });
 
-/*var io = require('socket.io')(app);
 
-io.on('connection', function(socket) {
-    
-  console.log('Node is listening to port');
-    
-});
-*/
+
 parser.on('data', function(data) {
-  //jdat = parseData(data);  
-  //console.log('Received data from port: ' + data);
+
   io.emit('data', data);
     
 });
